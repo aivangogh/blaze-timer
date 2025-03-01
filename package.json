@@ -1,43 +1,29 @@
 {
-  "name": "blaze-timer",
-  "appName": "Blaze Timer",
-  "description": "A minimalist timer for Rubik's Cube",
-  "private": true,
-  "version": "0.0.1",
-  "type": "module",
-  "author": {
-    "name": "Ivan Gemota",
-    "email": "aivangogh.dev@gmail.com",
-    "url": "https://aivan-dev.vercel.app"
-  },
-  "repository": "https://github.com/aivangogh/blaze-timer",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@tailwindcss/vite": "^4.0.8",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-router": "^7.2.0",
-    "tailwindcss": "^4.0.8",
-    "zustand": "^5.0.3"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.19.0",
-    "@types/react": "^19.0.8",
-    "@types/react-dom": "^19.0.3",
-    "@vitejs/plugin-react": "^4.3.4",
-    "eslint": "^9.19.0",
-    "eslint-plugin-react-hooks": "^5.0.0",
-    "eslint-plugin-react-refresh": "^0.4.18",
-    "globals": "^15.14.0",
-    "react-scan": "^0.2.8",
-    "typescript": "~5.7.2",
-    "typescript-eslint": "^8.22.0",
-    "vite": "^6.1.0",
-    "vite-tsconfig-paths": "^5.1.4"
-  }
+	"name": "blaze-timer",
+	"appName": "Blaze Timer",
+	"description": "A minimalist timer for Rubik's Cube",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"author": {
+		"name": "Ivan Gemota",
+		"email": "aivangogh.dev@gmail.com",
+		"url": "https://aivan-dev.vercel.app"
+	},
+	"repository": "https://github.com/aivangogh/blaze-timer",
+	"workspaces": ["./client", "./server"],
+	"packageManager": "bun@1.2.4",
+	"scripts": {
+		"dev": "turbo dev",
+		"dev:client": "cd client && bun run dev",
+		"dev:server": "cd server && bun run dev",
+		"clean": "rm -rf node_modules client/node_modules server/node_modules bun.lockb client/bun.lockb server/bun.lockb"
+	},
+	"devDependencies": {
+		"bun-types": "latest",
+		"turbo": "^2.4.4"
+	},
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	}
 }
